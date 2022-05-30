@@ -29,5 +29,6 @@ y_pred = regressor.predict(x_test)
 
 # todo: display mean squared error
 
-file_to_write = open(os.path.join('data', 'models', 'baummethoden_lr.pickle'), "wb")
+file_to_write = open(os.path.join(
+    'data', 'models', 'baummethoden_lr.pickle'), "wb")
 pickle.dump(regressor, file_to_write)
