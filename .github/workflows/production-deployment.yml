@@ -36,7 +36,7 @@ jobs:
           git add .
           git add --force data/models/baummethoden_lr.pickle
           git commit -m "[CI] update trained model" || echo "No changes to commit"
-          git push --set-upstream origin heroku
+          git push --set-upstream --force origin heroku
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
