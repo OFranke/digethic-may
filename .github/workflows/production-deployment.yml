@@ -28,7 +28,7 @@ jobs:
       - name: Upload trained model
         uses: actions/upload-artifact@v2
         with:
-          name: baummethoden.pickle
+          name: baummethoden_lr.pickle
           path: data/models/baummethoden_lr.pickle
       - name: Push changes to heroku branch
         shell: bash
@@ -36,7 +36,7 @@ jobs:
           git add .
           git add --force data/models/baummethoden_lr.pickle
           git commit -m "[CI] update trained model" || echo "No changes to commit"
-          git push --set-upstream --force origin heroku
+          git push --set-upstream origin heroku
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
